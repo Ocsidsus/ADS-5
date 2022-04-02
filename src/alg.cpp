@@ -26,6 +26,8 @@ priority(stack1.get()))) && (pr != 1)) {
                 if (pr != 1) {
                     while ((priority(stack1.get()) >= pr) &&
 !(stack1.isEmpty())) {
+                        post += ' ';
+                        post += stack1.get();
                         stack1.pop();
                     }
                     stack1.push(inf[i]);
