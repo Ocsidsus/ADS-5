@@ -19,12 +19,13 @@ std::string infx2pstfx(std::string inf) {
         post += inf[i];
         } else {
             int pr = priority(inf[i]);
-            if (((pr == 0) || (stack1.isEmpty()) || (pr > priority(stack1.get())))
-&& (pr != 1)) {
+            if (((pr == 0) || (stack1.isEmpty()) || (pr >
+priority(stack1.get()))) && (pr != 1)) {
                 stack1.push(inf[i]);
             } else {
                 if (pr != 1) {
-                    while ((priority(stack1.get()) >= pr) && !(stack1.isEmpty())) {
+                    while ((priority(stack1.get()) >= pr) &&
+!(stack1.isEmpty())) {
                         stack1.pop();
                     }
                     stack1.push(inf[i]);
@@ -49,7 +50,6 @@ std::string infx2pstfx(std::string inf) {
 }
 
 int eval(std::string pref) {
-
     TStack<int, 100> stack2;
     int count = 0;
     std::string cash = "";
@@ -99,8 +99,5 @@ int priority(char c) {
         return 2;
     case '*': case '/':
         return 3;
-    default:
-        std::cout << "FAILED DETERMINE PRIORITY!" << std::endl;
-        return -1;
     }
-};
+}
