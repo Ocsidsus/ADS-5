@@ -100,4 +100,5 @@ int priority(char c) {
     case '*': case '/':
         return 3;
     }
+    return -1;
 }
